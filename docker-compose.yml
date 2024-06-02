@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+    container_name: "task_web"
+    restart: always
+    command: bash ./entrypoint.sh
+    volumes:
+      - .:/usr/src/app
+      - ./media:/usr/src/app/media
+      - ./static:/usr/src/app/static
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.dev
+    networks:
+      - my_network
+    depends_on:
+      - db
+      - elasticsearch
+
+  db:
+    image: postgres:13
+    container_name: "task_db"
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    env_file:
+      - .env.dev
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    networks:
+      - my_network
+
+  elasticsearch:
+    container_name: "elasticsearch"
+    image: elasticsearch:7.14.2
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+networks:
+  my_network:
+
+volumes:
+  pgdata:
+
