@@ -49,6 +49,7 @@ PACKAGES = [
     "drf_yasg",
     "corsheaders",
     "rest_framework",
+    "rest_framework_simplejwt"
 ]
 
 INSTALLED_APPS += LOCAL_APPS + PACKAGES

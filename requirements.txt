@@ -22,3 +22,5 @@ urllib3==1.26.18
 django-elasticsearch-dsl==7.2.1
 elasticsearch==7.16.2
 elasticsearch-dsl==7.4.0
+
+pytest==8.2.1
