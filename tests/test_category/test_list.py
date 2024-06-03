@@ -1,4 +1,3 @@
-import locale
 import pytest
 
 from django.contrib.auth.models import User
@@ -8,8 +7,6 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 from model_bakery import baker
 import src.core.models as models
-
-encoding = locale.getencoding() or 'ascii'
 
 
 @pytest.mark.django_db
@@ -27,6 +24,3 @@ class TestListCategory:
         url = 'http://127.0.0.1:8000/v1/category/list/'
         response = client.get(url)
         assert response.status_code == 200
-
-
-

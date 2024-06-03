@@ -11,4 +11,3 @@ class Category(model.BaseModel):
         ordering = ("-added_at",)
         verbose_name = 'Categories'
         verbose_name_plural = 'Categories'
-

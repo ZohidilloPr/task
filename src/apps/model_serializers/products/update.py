@@ -7,4 +7,3 @@ class ProductUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Product
         fields = ("id", "title", "description", "category", "price", "image", "added_at")
-

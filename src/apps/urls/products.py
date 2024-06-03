@@ -11,5 +11,5 @@ router.register("update", views.ProductUpdateView, basename="product-update")
 router.register("delete", views.ProductDeleteView, basename="product-delete")
 
 urlpatterns = [
-                  path("elastic_search/", views.ProductSearchListView.as_view())
-              ] + router.urls
+    path("elastic_search/", views.ProductSearchListView.as_view())
+] + router.urls

@@ -15,4 +15,3 @@ class ProductGetSerializer(serializers.ModelSerializer):
         data = super().to_representation(instance)
         data["added_at"] = instance.added_at.strftime("%Y-%m-%d %H:%M")
         return data
-

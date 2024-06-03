@@ -10,4 +10,3 @@ class CategoryCreateView(CreateModelMixin, GenericViewSet):
     queryset = models.Category.objects.all()
     serializer_class = serializers.CategoryCreateSerializer
     permission_classes = [permissions.IsAuthenticated]
-

@@ -10,6 +10,3 @@ class CategoryGetViewSet(RetrieveModelMixin, GenericViewSet):
     queryset = models.Category.objects.all()
     serializer_class = serializers.CategoryGetSerializer
     permission_classes = [permissions.IsAuthenticated]
-
-
-

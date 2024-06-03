@@ -13,4 +13,3 @@ class Product(model.BaseModel):
         ordering = ("-added_at",)
         verbose_name = 'Products'
         verbose_name_plural = 'Products'
-

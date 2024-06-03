@@ -1,4 +1,3 @@
-import locale
 import pytest
 
 from django.contrib.auth.models import User
@@ -6,8 +5,6 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 
 from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken
-
-encoding = locale.getencoding() or 'ascii'
 
 
 @pytest.mark.django_db

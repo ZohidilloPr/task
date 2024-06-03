@@ -12,6 +12,3 @@ class CategoryListView(ListModelMixin, GenericViewSet):
     serializer_class = serializers.CategoryListSerializer
     permission_classes = [permissions.IsAuthenticated]
     pagination_class = shared.CustomPagination
-
-
-

@@ -12,5 +12,3 @@ class ProductListView(ListModelMixin, GenericViewSet):
     serializer_class = serializers.ProductListSerializer
     permission_classes = [IsAuthenticated]
     pagination_class = shared.CustomPagination
-
-

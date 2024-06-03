@@ -1,4 +1,3 @@
-# from rest_framework_swagger.views import get_swagger_view
 from drf_yasg import openapi
 from django.contrib import admin
 from rest_framework import permissions
@@ -19,8 +18,6 @@ yasg_schema_view = get_schema_view(
     public=True,
     permission_classes=(permissions.AllowAny,),
 )
-
-# schema_view = get_swagger_view(title=API_TITLE)
 
 
 admin.site.site_header = "Tafakkur Group"

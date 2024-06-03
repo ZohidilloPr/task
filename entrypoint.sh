@@ -14,7 +14,7 @@ echo "Collecting static files..."
 python manage.py collectstatic --noinput
 
 echo "Running tests..."
-python manage.py test
+pytest
 
 echo "Starting Gunicorn..."
 gunicorn config.wsgi:application --bind 0.0.0.0:8000
