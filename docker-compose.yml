@@ -13,8 +13,6 @@ services:
       - ./static:/usr/src/app/static
     ports:
       - "8000:8000"
-    env_file:
-      - .env.dev
     networks:
       - my_network
     depends_on:
@@ -28,11 +26,7 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     env_file:
-      - .env.dev
-    environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASS}
+      - ./.env.dev
     networks:
       - my_network
 
@@ -50,14 +44,6 @@ services:
     networks:
       - my_network
 
-  kibana:
-    image: "docker.elastic.co/kibana/kibana-oss:7.10.2"
-    ports:
-      - "5601:5601"
-    environment:
-      - 'ELASTICSEARCH_HOSTS=["http://search:9200"]'
-    networks:
-      - my_network
 
 networks:
   my_network:
