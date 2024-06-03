@@ -4,7 +4,7 @@ set -o errexit
 set -o pipefail
 # exits if any of your variables is not set
 set -o nounset
-export DJANGO_SETTINGS_MODULE=config.settings.local
+export DJANGO_SETTINGS_MODULE=config.settings.product
 
 echo "Running migrations..."
 python manage.py makemigrations --noinput

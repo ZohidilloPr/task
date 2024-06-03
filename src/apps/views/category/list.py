@@ -9,7 +9,7 @@ import src.apps.model_serializers as serializers
 
 class CategoryListView(ListModelMixin, GenericViewSet):
     queryset = models.Category.objects.all()
-    serializer_class = serializers.CategoryCreateSerializer
+    serializer_class = serializers.CategoryListSerializer
     permission_classes = [permissions.IsAuthenticated]
     pagination_class = shared.CustomPagination
 

@@ -37,17 +37,32 @@ services:
       - my_network
 
   elasticsearch:
-    container_name: "elasticsearch"
-    image: elasticsearch:7.14.2
+    container_name: "search"
+    image: "elasticsearch:7.14.2"
     environment:
       - discovery.type=single-node
+      - xpack.security.enabled=false
     ports:
       - "9200:9200"
       - "9300:9300"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - my_network
+
+  kibana:
+    image: "docker.elastic.co/kibana/kibana-oss:7.10.2"
+    ports:
+      - "5601:5601"
+    environment:
+      - 'ELASTICSEARCH_HOSTS=["http://search:9200"]'
+    networks:
+      - my_network
 
 networks:
   my_network:
 
 volumes:
   pgdata:
+  esdata:
 
